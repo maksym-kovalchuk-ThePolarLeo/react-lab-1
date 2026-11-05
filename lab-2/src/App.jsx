@@ -1,14 +1,22 @@
-import Header from './components/Header'
+import Header from './components/Header.jsx'
 import Avatar from './components/Avatar.jsx'
+import Profile from './components/Profile.jsx'
+import Card from './components/Card.jsx'
 import { team } from './data.js'
 
 export default function App() {
+  const lead = team[0]
+
   return (
     <>
       <Header title="Команда проєкту" subtitle="ЛР-2: компоненти й пропси" />
       <main>
-        <Avatar person={team[0]} size={120} />
-        <Avatar person={team[1]} />
+        <Avatar person={lead} size={120} />
+        <p>{lead.name}</p>
+
+        {team.map((person) => (
+          <Profile key={person.id} person={person} />
+        ))}
       </main>
     </>
   )
