@@ -7,7 +7,7 @@ export default function App() {
     <main className="app">
       <h1>Меню кав'ярні</h1>
       <SearchBar />
-      <MenuTable menu={menu} />
+      <MenuTable menu={menu} inStockOnly={false} />
     </main>
   )
 }
